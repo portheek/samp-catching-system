@@ -356,22 +356,22 @@ GetTopThreeEventPlayers(topPlayers[], &size)
 		topPlayers[2] = MAX_PLAYERS-1;
 
 		for (new i = 0; i < size; i++) 
-	    { 
-	    	new score = g_playerEventScore[eventPlayers[i]];
-	        if (score >= g_playerEventScore[topPlayers[0]]) 
-	        { 
-	            topPlayers[2] = topPlayers[1]; 
-	            topPlayers[1] = topPlayers[0]; 
-	            topPlayers[0] = eventPlayers[i]; 
-	        } 
-	        else if (score >= g_playerEventScore[topPlayers[1]]) 
-	        { 
-	            topPlayers[2] = topPlayers[1]; 
-	            topPlayers[1] = eventPlayers[i]; 
-	        } 
-	        else if (score >= g_playerEventScore[topPlayers[2]]) 
-	            topPlayers[2] = eventPlayers[i]; 
-	    } 
+		{ 
+			new score = g_playerEventScore[eventPlayers[i]];
+			if (score >= g_playerEventScore[topPlayers[0]]) 
+			{ 
+				topPlayers[2] = topPlayers[1]; 
+				topPlayers[1] = topPlayers[0]; 
+				topPlayers[0] = eventPlayers[i]; 
+			} 
+			else if (score >= g_playerEventScore[topPlayers[1]]) 
+			{ 
+				topPlayers[2] = topPlayers[1]; 
+				topPlayers[1] = eventPlayers[i]; 
+			} 
+			else if (score >= g_playerEventScore[topPlayers[2]]) 
+				topPlayers[2] = eventPlayers[i]; 
+		} 
 	}
 
 	if(size > 3)
