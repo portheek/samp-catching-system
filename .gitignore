@@ -1,0 +1,6 @@
+*.exe
+*.txt
+/filterscripts
+/include
+/npcmodes
+/scriptfiles
