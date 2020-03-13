@@ -294,17 +294,17 @@ EndCatchingEvent()
 {
 	g_isEventStarted = false;
 
-    SendClientMessageToAll(C_GREEN, "Gaudynës baigësi! Daugiausiai taðkø surinkæ þaidëjai:");
+	SendClientMessageToAll(C_GREEN, "Gaudynës baigësi! Daugiausiai taðkø surinkæ þaidëjai:");
 
 	new topPlayers[3], size;
 	GetTopThreeEventPlayers(topPlayers, size);
 
-    for(new i = 0; i < size; i++)
-    {
-    	new tempString[64];
-    	format(tempString, sizeof tempString, "• %i. %s surinko %i taðkø!", i+1, GetPlayerNameEx(i), g_playerEventScore[topPlayers[i]]);
-    	SendClientMessageToAll(C_GREEN, tempString);
-    }
+	for(new i = 0; i < size; i++)
+	{
+		new tempString[64];
+		format(tempString, sizeof tempString, "• %i. %s surinko %i taðkø!", i+1, GetPlayerNameEx(i), g_playerEventScore[topPlayers[i]]);
+		SendClientMessageToAll(C_GREEN, tempString);
+	}
 
 	for(new i = 0; i <= GetPlayerPoolSize(); i++)
 	{
